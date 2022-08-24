@@ -12,7 +12,7 @@
 - TIME-TAKEN : 12 hours
 
 
-[Web Page:Live-Link](https://shopifyclone.netlify.app/)
+[Web Page:Live-Link](https://shopifyclonetailwindcss.netlify.app/)
 
 ![images](./assets/b1.png)
 
