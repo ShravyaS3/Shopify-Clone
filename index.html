@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Shopify | Clone</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script>
+            tailwind.config ={
+                theme: {
+                    screens : {
+                        sm:'480px',
+                        md:"768px",
+                        lg: "976px",
+                        xl:"1440px"
+                    }
+                }
+            }
+        </script>
+        <style>
+            body{
+                overflow-y: scroll;
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+            html {
+                scroll-behavior: smooth;
+            }
+            @font-face {
+                font-family: "ShopifySans";
+                src: url("./fonts/ShopifySans--regular.woff2") format("woff2");
+                font-weight: normal;
+            }
+            @font-face {
+                font-family: "ShopifySans";
+                src: url("./fonts/ShopifySans--medium.woff2") format("woff2");
+                font-weight: 500;
+            }
+            @font-face {
+                font-family: "ShopifySans";
+                src: url("./fonts/ShopifySans--bold.woff2") format("woff2");
+                font-weight: 700;
+            }
+            @font-face {
+                font-family: "ShopifySans";
+                src: url("./fonts/ShopifySans--extrabold.woff2") format("woff2");
+                font-weight: 900;
+            }
+
+            body {
+                font-family: "ShopifySans", sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="content">
+            <div class="top section1 bg-[#faf7ec]">
+                <header class="bg-[#fbf7ed] h-[80px] fixed z-50 left-0 right-0 top-0 ">
+                    <div class="header">
+                        <div class="items">
+                             <div class="img md:pt-4 ml-8"><a href="#"><img src="./assets/shopify-logo.svg" alt="logo" class=" "></a></div>
+                             <ul class=" hidden lg:flex row justify-start ml-[150px] relative bottom-10 ">
+                                 <li class="nav-item w-[47px] ml-10 ">
+                                    <div class="pb flex flex-row justify-between font-semibold">
+                                        <a href="#">Start</a>
+                                        <svg class="relative top-[2px]"  xmlns="http://www.w3.org/2000/svg" width="10px" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>
+                                    </div>
+                                </li>
+                                 <li class="nav-item w-[40px] ml-10 ">
+                                    <div class="pb flex flex-row justify-between font-semibold">
+                                        <a href="#">Sell</a>
+                                        <svg class="relative top-[2px]"  xmlns="http://www.w3.org/2000/svg" width="10px" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>
+                                    </div>
+                                </li>
+                                <li class="nav-item w-[65px] ml-10">
+                                    <div class="pb flex flex-row justify-between font-semibold">
+                                        <a href="#">Market</a>
+                                        <svg class="relative top-[2px]"  xmlns="http://www.w3.org/2000/svg" width="10px" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>
+                                    </div>
+                                </li>
+                                 <li class="nav-item w-[72px] ml-10 ">
+                                    <div class="pb flex flex-row justify-between font-semibold">
+                                        <a href="#">Manage</a>
+                                        <svg class="relative top-[2px]" xmlns="http://www.w3.org/2000/svg" width="10px" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>
+                                    </div>
+                                 </li>
+                             </ul>
+                             <ul class=" hidden lg:flex row justify-end mr-[200px] relative bottom-[65px] ">
+                                <li class="nav-item ml-10 "><div class="pb font-semibold"><a href="#">Pricing</a></div></li>
+                                <li class="nav-item ml-10 w-[56px]">
+                                    <div class="pb flex flex-row justify-between font-semibold ">
+                                        <a href="#">Learn</a>
+                                        <svg class="relative top-[2px]"  xmlns="http://www.w3.org/2000/svg" width="10px" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M192 384c-8.188 0-16.38-3.125-22.62-9.375l-160-160c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0L192 306.8l137.4-137.4c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25l-160 160C208.4 380.9 200.2 384 192 384z"/></svg>
+                                    </div> 
+                                </li>
+                                <li class="nav-item ml-10"><div class="pb font-semibold"><a href="#">Login</a></div></li>
+                            </ul>
+        
+                            <div class="Signin">
+                                <div class="sign w-48 flex row justify-between items-center absolute right-[-30px] top-[10px] ">
+                                    <div class="button  hidden lg:flex bg-[#018061] w-28 rounded-lg px-[2px] py-[8px] cursor-pointer hover:bg-green-900	 md:relative md:top-4">
+                                         <span class="ml-2 text-white font-bold">Try for Free</span>
+                                    </div>
+                                    <div class="button lg:hidden flex px-[2px] py-[8px] cursor-pointer md:relative md:top-4">
+                                        <span class="ml-14  font-bold">Log In</span>
+                                    </div>
+                                     <div class="menu absolute md:top-[5px] left-[120px] block cursor-pointer lg:hidden">
+                                         <svg width="20px" height="60px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.33 14.33 64 32 64H416C433.7 64 448 78.33 448 96C448 113.7 433.7 128 416 128H32C14.33 128 0 113.7 0 96zM0 256C0 238.3 14.33 224 32 224H416C433.7 224 448 238.3 448 256C448 273.7 433.7 288 416 288H32C14.33 288 0 273.7 0 256zM416 448H32C14.33 448 0 433.7 0 416C0 398.3 14.33 384 32 384H416C433.7 384 448 398.3 448 416C448 433.7 433.7 448 416 448z"/></svg>
+                                     </div>
+                                </div>
+                            </div>   
+                        </div>
+                     </div>     
+                </header>
+                <div class="bottom flex flex-col-reverse md:flex-row justify-between mt-16 h-[700px] md:h-[600px]">
+                    <div class="left1 md:w-1/2 mx-auto md:absolute md:left-[100px] md:top-[120px]">
+                        <h1 class="text-2xl text-center font-bold mt-20 md:text-5xl  md:text-start">The easiest way to sell <br> online in India</h1>
+                        <p class="text-lg text-center mx-auto mt-14 w-96 md:text-start md:text-lg md:mx-2 md:font-semibold">Try one of the most powerful platforms on the <br> market for free. No technical knowledge needed.</p>
+                        <div class="download mx-2 pt-4 flex row justify-between md:w-[430px]">
+                            <form action="#">
+                                <input type="text" class="email w-[300px] h-[40px] rounded-lg border-[1px]" placeholder="Enter your Email Address">
+                            </form>
+                            <div class="button bg-[#018061] w-28 rounded-lg px-[2px] py-[8px] cursor-pointer hover:bg-green-900">
+                                <span class="ml-2 text-white font-bold">Try for Free</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="right1 md:w-[40%] md:h-[40%] absolute right-[30px] top-[150px]  ">
+                        <video
+                        class="w-[100%] ml-12 md:ml-0 md:w-[100%] "
+                        autoplay="true"
+                        loop="true"
+                        playsinline="playsinline"
+                        muted
+                        poster="./assets/video-poster.webp"
+                        >
+                        <source
+                            src="./assets/hero-video.webm"
+                            type="video/webm"
+                        />
+                        <source
+                            src="./assets/hero-video.mp4"
+                            type="video/mp4"
+                        />
+    
+                        Sorry, your browser doesn't support embedded videos.
+                        </video>
+                    </div>        
+                </div>
+            </div>
+            <!-- Online Bussiness Section -->
+            <div class="section2 bg-[#004d3e] p-12">
+                <div class="bussiness mt-[50px] mb-10">
+                    <h1 class="text-white text-2xl  font-bold md:text-3xl mb-[10px]" >Bring your business online</h1>
+                    <p class="text-white  font-semibold text-s mb-[10px]">Create an ecommerce website backed by powerful tools that help you find customers, drive sales, and manage your day-to-day.</p>
+                    <button class="flex group">
+                        <a class="font-bold text-lg text-white md:text-xl leading-[50px] " href="#">Explore More Examples</a>
+                        <svg class="fill-white  relative top-[18px] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                    </button>
+                </div>
+    
+                <div class="flex flex-row justify-between flex-wrap ">
+                    <div class="img-content mx-auto">
+                        <img src="./assets/business-1.webp" width="222px" height="392px" alt="">
+                        <h1 class="text-white font-bold mt-5 hover:underline">FOOD & DRINK</h1>
+                        <h1 class="text-white font-semibold mb-5">Blue Tokai</h1>
+                    </div>
+                    <div class="img-content mx-auto">
+                        <img src="./assets/business-2.webp" width="222px" height="392px" alt="">
+                        <h1 class="text-white font-bold mt-5 hover:underline">JEWELRY</h1>
+                        <h1 class="text-white font-semibold mb-5">Quirksmith</h1>
+                    </div>
+                    <div class="img-content mx-auto">
+                        <img src="./assets/business-3.webp" width="222px" height="392px" alt="a">
+                        <h1 class="text-white font-bold mt-5 hover:underline">ELECTRICITY</h1>
+                        <h1 class="text-white font-semibold mb-5">Crossbeats</h1>
+                    </div>
+                    <div class="img-content mx-auto">
+                        <img src="./assets/business-4.webp" width="222px" height="392px" alt="">
+                        <h1 class="text-white font-bold mt-5 hover:underline">BEAUTY</h1>
+                        <h1 class="text-white font-semibold mb-5">Mcaffeine</h1>
+                    </div>
+                    <div class="img-content mx-auto cursor-pointer ">
+                        <img src="./assets/business-5.webp" width="222px" height="392px" alt="">
+                        <h1 class="text-white font-bold mt-5 hover:underline">FASHION</h1>
+                        <h1 class="text-white font-semibold mb-5">Bunaai</h1>
+                    </div>
+            
+                    <div class="bestpath mt-24">
+                        <h1 class="text-white text-3xl font-semibold  pb=20">Take the best path forward</h1>
+                        <div class="flex justify-between flex-wrap pt-10">
+                           <div class="one pb-10 pl-10 mx-auto">
+                               <img src="./assets/online-business.svg" width="36px" height="36px" alt="">
+                               <h1 class="font-semibold text-white pt-5 pb-2">Start an online business</h1>
+                               <p class="text-white">Create a business, whether<br> you’ve got a fresh idea or are <br> looking for a new way to make <br> money.</p>
+                           </div>
+                           <div class="one pb-10 pl-10 mx-auto">
+                               <img src="./assets/online-business.svg" width="36px" height="36px" alt="">
+                               <h1 class="font-semibold text-white pt-5 pb-2">Move your business online</h1>
+                               <p class=" text-white">Turn your retail store into an <br> online store and keep serving <br>customers without missing a <br> beat.</p>
+                           </div>
+                           <div class="one pb-10 pl-10 mx-auto">
+                               <img src="./assets/online-business.svg" width="36px" height="36px" alt="">
+                               <h1 class="font-semibold text-white pt-5 pb-2">Switch to Shopify</h1>
+                               <p class=" text-white">Bring your business to Shopify,<br> no matter which ecommerce<br> platform you’re currently using.</p>
+                           </div>
+                           <div class="one pb-10  pl-10 mx-auto">
+                               <img src="./assets/online-business.svg" width="36px" height="36px" alt="">
+                               <h1 class="font-semibold text-white pt-5 pb-2">Hire a Shopify expert</h1>
+                               <p class=" text-white">Get set up with the help of a <br> trusted freelancer or agency from <br> the Shopify Experts Marketplace.</p>
+                           </div>
+                        </div>
+                   </div>
+                </div>
+            </div>
+    
+            <!-- Sell everywhere section -->
+    
+            <div class="section3 relative text-center top-[100px]">
+                <div class="top mx-auto">
+                    <h1 class="text-3xl md:text-4xl font-semibold pb-5">With you wherever you’re going</h1>
+                    <p class="text-s md:text-2xl">One platform with all the ecommerce and point of sale features <br> you need to start, run, and grow your business.</p>
+                </div>
+                <div class="flex md:flex-row flex-col relative mx-auto">
+                    <div class="left1 md:w-[40%] md:h-[40%] md:absolute md:left-[30px] md:top-[100px]  ">
+                        <video
+                        class="w-[80%] ml-12 md:ml-0 md:w-[100%]"
+                        autoplay="true"
+                        loop="true"
+                        playsinline="playsinline"
+                        muted
+                        poster="./assets/video-shopify.webm"
+                        >
+                        <source
+                            src="./assets/video-shopify.webm"
+                            type="video/webm"
+                        />
+                        <source
+                            src="./assets/video-shopify.webm"
+                            type="video/mp4"
+                        />
+    
+                        Sorry, your browser doesn't support embedded videos.
+                        </video>
+                    </div>
+                
+                    <div class="right1 text-start group md:absolute md:right-[30px] md:top-[100px] pt-20">
+                        <h1 class="text-4xl pb-5" >Sell everywhere</h1>
+                        <p class="pb-5">Use one platform to sell products to anyone, anywhere—in <br> person with Point of Sale and online through your website, social <br> media, and online marketplaces.</p>
+                        <button class="flex">
+                            <a class="font-semibold text-[#018061] text-lg  md:text-xl leading-[50px] " href="#">Explore ways to sell</a>
+                            <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                        </button>
+                    </div>
+                </div>
+    
+            </div>
+            <!-- Marketing Bussiness Section -->
+            <div class="section3 relative pt-20 text-center top-[200px] md:text-start md:top-[500px]">
+                <div class="relative flex flex-wrap flex-row justify-between items-center">
+                    <div class="left1 mx-auto relative  ">
+                        <h1 class="text-2xl md:text-4xl font-bold pb-5 ">Market your Business</h1>
+                        <p class="text-lg md:text-xl pb-5">Take the guesswork out of marketing with built-in tools that help <br> you create, execute, and analyze digital marketing campaigns.</p>
+                        <button class="flex group">
+                            <a class="font-semibold text-[#018061] text-lg  md:text-xl leading-[50px] " href="#">Explore how to market your business</a>
+                            <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                        </button>
+                    </div>
+                    <div class="right1 mx-auto text-start pt-20">
+                        <img src="./assets/market-business.jpg" width="540px" height="514px" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- manage your bussiness section -->
+            <div class="section4 relative pt-20 text-center flex flex-wrap flex-row justify-between items-center top-[200px] md:text-start md:top-[500px]">
+                <div class="left1 mx-auto pt-20">
+                    <img src="./assets/shopify-dashboard.svg" width="540px" height="514px" alt="">
+                </div>
+                <div class="left1 mx-auto relative ">
+                    <h1 class="text-2xl md:text-4xl font-bold pb-5 ">Manage everything</h1>
+                    <p class="text-lg md:text-xl pb-5">Gain the insights you need to grow—use a single <br> dashboard to manage orders, shipping, and payments <br> anywhere you go.</p>
+                    <button class="flex group">
+                        <a class="font-semibold text-[#018061] text-lg  md:text-xl leading-[50px] " href="#">Explore how to manage your business</a>
+                        <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                    </button>
+                </div>
+                
+            </div>
+            <!-- Explore more on Shopify -->
+            <div class="section3 relative p-16 text-center bg-[#f3fcf4] top-[100px]">
+                <div class="top mx-auto">
+                    <h1 class="text-3xl md:text-4xl text-start text-[#014c3e] font-semibold ">Explore more from Shopify in India</h1>
+                </div>
+                <div class="section4 pt-5 text-center flex flex-wrap flex-col-reverse md:flex-row justify-center items-center  md:text-start"> 
+                    <div class="left1 mx-auto mt-5 pr-5 items-center relative bg-white ">
+                        <h1 class="text-xl font-bold p-5">START</h1>
+                        <h1 class="text-xl font-semibold p-5 ">Launch your store with the help of a <br> Shopify Expert</h1>
+                        <p class="text-lg  p-5">Find hundreds of experts from India ready to help you get your <br> store up and running, from choosing a theme to building a fully <br> customized site.</p>
+                        <button class="flex group">
+                            <a class="font-semibold text-[#018061] text-lg pl-5  md:text-xl leading-[50px] " href="#">Explore how to manage your business</a>
+                            <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                        </button>
+                    </div>
+                    <div class="left1 mx-auto pt-5 md:w-[50%]">
+                        <img src="./assets/right.jpg"  alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- Independent Bussiness Section -->
+            <div class="section4 relative mt-[200px] ml-[70px]">
+                <h1 class="text-3xl md:text-4xl text-center md:text-start pb-5 font-semibold ">Empowering independent business <br> owners everywhere</h1>
+                <h2 class="text-xl md:text-2xl text-center md:text-start pb-5 ">Millions of businesses in 175 countries around the world have <br> made over $496 billion USD in sales using Shopify.</h2>
+                <button class="flex mx-auto md:mx-0 group">
+                    <a class="font-semibold text-[#018061] text-lg  md:text-xl leading-[50px] " href="#">Learn more about Shopify</a>
+                    <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                </button>
+                <img class="mx-auto" src="./assets/world.svg" alt="">
+            </div>
+            <!-- Alicia section -->
+            <div class="section3 relative p-16 text-center top-[100px]">
+                <div class="top mx-auto">
+                    <h1 class="text-3xl md:text-4xl text-start text-[#014c3e] font-semibold ">Explore more from Shopify in India</h1>
+                </div>
+                <div class="section4 pt-5 text-center flex flex-wrap flex-row justify-center items-center  md:text-start"> 
+                    
+                    <div class="left1 mx-auto pt-5 md:w-[50%]">
+                        <img class="md:w-[80%]  object-cover" src="./assets/testimonial.jpg" alt="">
+                    </div>
+                    <div class="left1 mx-auto mt-5 items-center bg-[#002f24] text-white relative bg-white md:w-[50%]">
+                        <h1 class="text-lg text-center p-5 ">“Shopify was my knight in shining armor when I exhausted every other possibility of getting my online store up and running. It was stunningly easy to use, with more features and plug-ins that I didn’t even know I wanted.”</h1>
+                        <img class="mx-auto" src="./assets/alice.png" alt="">
+                        <h1 class="text-2xl font-semibold text-center  p-5 ">Alicia | Alicia Souza</h1>
+                    </div>
+                </div>
+            </div>
+            <!-- Brands section -->
+            <div class="brands flex justify-between flex-row flex-wrap pb-[50px] pl-[50px] pr-[50px] relative top-[150px]">
+                <img class="p-5" src="./assets/brands-1.png" alt="">
+                <img class="p-5" src="./assets/brand-2.png" alt="">
+                <img class="p-5" src="./assets/brand-3.png" alt="">
+                <img class="p-5" src="./assets/brand-4.png" alt="">
+                <img class="p-5" src="./assets/brand-5.png" alt="">
+                <img class="p-5" src="./assets/brand-6.png" alt="">
+                <img class="p-5" src="./assets/brand-7.png" alt="">
+            </div>
+            <!-- help section -->
+            <div class=" relative flex flex-wrap justify-center flex-col-reverse md:flex-row items-center text-start top-[200px] ">
+                <div class="left1 mx-auto md:w-1/2 h-[100%] relative bg-[#faf7ec] ">
+                    <h1 class="text-2xl md:text-4xl font-bold pl-[50px] pb-[50px] pt-[50px]">Get the help you need,<br>every step of the way </h1>
+                    <div class="boxes flex flex-row justify-center md:justify-start flex-wrap pl-[50px] pr-[70px]  ">
+                        <div class="one p-5">
+                            <h1 class="font-semibold">Shopify support</h1>
+                            <p>Contact support 24/7, whether <br> you’re troubleshooting issues <br> or looking for business advice.</p>
+                            <button class="flex group">
+                                <a class="font-semibold text-[#018061] text-s md:text-lg   leading-[50px] " href="#">Contact Support</a>
+                                <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px] group-hover:translate-x-2 duration-500" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                            </button>
+                        </div>
+                        <div class="one p-5">
+                            <h1 class="font-semibold">Shopify App Store</h1>
+                            <p>Add features and functionality <br> to your business with 6,000+ <br> apps that integrate directly <br> with Shopify.</p>
+                            <button class="flex">
+                                <a class="font-semibold text-[#018061] text-s md:text-lg  leading-[50px] " href="#">Visit the Sopify App store</a>
+                                <svg class=" relative top-[18px] fill-[#018061] md:top-[8px] left-[5px]" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                            </button>
+                        </div>
+                        <div class="one p-5">
+                            <h1 class="font-semibold">Shopify Experts Marketplace</h1>
+                            <p>Hire a Shopify expert to help <br> you with everything from store <br> setup to SEO.</p>
+                            <button class="flex">
+                                <a class="font-semibold text-[#018061] text-s md:text-lg  leading-[50px] " href="#">Explore the Shopify Experts Marketplace</a>
+                                <svg class=" relative top-[68px] right-[105px] fill-[#018061] md:top-[8px] md:left-[5px]" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                   
+                </div>
+                <div class="right1 mx-auto md:w-1/2 h-[100%] w-[80%]">
+                    <img
+                    src="./assets/get-help.webp"
+                    alt="person"
+                />
+                </div>   
+            </div>
+            <!-- trial section -->
+            <div class="trial relative text-center mx-auto top-[300px]">
+                <h1 class="font-bold text-2xl md:text-4xl pb-10">Start your business journey with Shopify</h1>
+                <p class="text-lg md:text-2xl pb-5">Try Shopify for free, and explore all the tools and services you need to start, run, and grow <br> your business.</p>
+                <div class="button bg-[#018061] mx-auto w-32 rounded-lg px-[2px] py-[8px] cursor-pointer hover:bg-green-900">
+                    <span class=" text-white text-s font-bold text-start">Start Free Trial</span>
+                </div>
+            </div>
+            <!-- Back to top -->
+            <div
+            class="px-[6%] flex justify-center md:justify-end pb-[50px] relative top-[300px]"
+        >
+            <div>
+                <div
+                    class="flex items-center pt-[20px] gap-1 group cursor-pointer"
+                >
+                    <a href="#top">
+                        <span
+                            class="text-[1.125rem] font-[700] text-[#008060]"
+                            >Back to top
+                        </span>
+                        <span
+                            class="inline-block w-[20px] group-hover:-translate-y-2 duration-500"
+                        >
+                        <svg  class=" relative  fill-[#018061] md:top-[5px] left-[5px]" width="15px" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M374.6 246.6C368.4 252.9 360.2 256 352 256s-16.38-3.125-22.62-9.375L224 141.3V448c0 17.69-14.33 31.1-31.1 31.1S160 465.7 160 448V141.3L54.63 246.6c-12.5 12.5-32.75 12.5-45.25 0s-12.5-32.75 0-45.25l160-160c12.5-12.5 32.75-12.5 45.25 0l160 160C387.1 213.9 387.1 234.1 374.6 246.6z"/></svg>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- footer starts here -->
+        <footer class="bg-[#012e24] relative top-[300px]">
+           <div class="horizontal text-white ">
+            <ul class="inline-block ">
+                <li class="list inline-block m-5 font-bold text-s md:text-xl">About</li>
+                <li class="list inline-block m-5 font-bold text-s md:text-xl">Careers</li>
+                <li class="list inline-block m-5 font-bold text-s md:text-xl">Press and Media</li>
+                <li class="list inline-block m-5 font-bold text-s md:text-xl">Shopify Plus</li>
+                <li class="list inline-block m-5 font-bold text-s md:text-xl">Site Map</li>
+            </ul>
+           </div> 
+           <!-- middle part -->
+           <div class="middle flex flex-row flex-wrap justify-center md:justify-between mx-auto text-[#767868] border-t border-[#CAD5E2] mt-5">
+                <div class="one">
+                    <ul class="m-5 text-[#CAD5E2]">
+                        <li class="font-bold text-white pb-5"><a href="#">ONLINE STORE</a></li>
+                        <li class="hover:text-white "><a href="#">Sell online</a></li>
+                        <li class="hover:text-white "><a href="#">Features</a></li>
+                        <li class="hover:text-white "><a href="#">Examples</a></li>
+                        <li class="hover:text-white "><a href="#">Website Builder</a></li>
+                        <li class="hover:text-white "><a href="#">Online Retail</a></li>
+                    </ul>
+                </div>
+                <div class="one">
+                    <ul class="m-5 text-[#CAD5E2]">
+                        <li class="font pb-10"><a href="#"></a></li>
+                        <li class="hover:text-white"><a href="#">Ecommerce website</a></li>
+                        <li class="hover:text-white"><a href="#">Domain names</a></li>
+                        <li class="hover:text-white"><a href="#">Themes</a></li>
+                        <li class="hover:text-white"><a href="#">Shopping cart</a></li>
+                        <li class="hover:text-white"><a href="#">Ecommerce Hosting</a></li>
+                    </ul>
+                </div>
+                <div class="one">
+                    <ul class="m-5 text-[#CAD5E2]">
+                        <li class="font pb-10"><a href="#"></a></li>
+                        <li class="hover:text-white"><a href="#">Mobile commerce</a></li>
+                        <li class="hover:text-white"><a href="#">Ecommerce software</a></li>
+                        <li class="hover:text-white"><a href="#">Online store builder</a></li>
+                        <li class="hover:text-white"><a href="#">Drop shipping bussiness</a></li>
+                        <li class="hover:text-white"><a href="#">Store themes</a></li>
+                    </ul>
+                </div>
+                <div class="one">
+                    <ul class="m-5 text-[#CAD5E2]">
+                        <li class="font-bold text-white pb-5"><a href="#">POINT OF SALE</a></li>
+                        <li class="hover:text-white"><a href="#">Point of sale</a></li>
+                        <li class="hover:text-white"><a href="#">Features</a></li>
+                    </ul>
+                </div>
+                <div class="one">
+                    <ul class="m-5 text-[#CAD5E2]">
+                        <li class="font-bold text-white pb-5"><a href="#">SUPPORT</a></li>
+                        <li class="hover:text-white"><a href="#">24/7 Support</a></li>
+                        <li class="hover:text-white"><a href="#">Shopify Help Center</a></li>
+                        <li class="hover:text-white"><a href="#">Shopify Community</a></li>
+                        <li class="hover:text-white"><a href="#">API Documentation</a></li>
+                        <li class="hover:text-white"><a href="#">Free tools</a></li>
+                        <li class="hover:text-white"><a href="#">Free Stock Photos</a></li>
+                        <li class="hover:text-white"><a href="#">Websites for sale</a></li>
+                        <li class="hover:text-white"><a href="#">Logo maker</a></li>
+                        <li class="hover:text-white"><a href="#">Bussiness na,e <br>generator</a></li>
+                        <li class="hover:text-white"><a href="#">Research</a></li>
+                        <li class="hover:text-white"><a href="#">Legal</a></li>  
+                    </ul>
+                </div>
+                <div class="one">
+                    <ul class="m-10 text-[#CAD5E2]">
+                        <li class="font-bold text-white pb-5"><a href="#">SHOPIFY</a></li>
+                        <li class="hover:text-white"><a href="#">Contact</a></li>
+                        <li class="hover:text-white"><a href="#">Partner Program</a></li>
+                        <li class="hover:text-white"><a href="#">Affiliate Program</a></li>
+                        <li class="hover:text-white"><a href="#">App Developers</a></li>
+                        <li class="hover:text-white"><a href="#">Investors</a></li>
+                        <li class="hover:text-white"><a href="#">Blog topics</a></li>
+                        <li class="hover:text-white"><a href="#">Community Events</a></li>
+
+                    </ul>
+                </div>
+           </div>
+           <!-- footer bottom part  -->
+           <div
+           class="py-[50px] border-t mt-[28px] border-[#CAD5E2]"
+       >
+           <div
+               class="flex flex-wrap justify-center gap-4 md:justify-between items-center px-[5%]"
+           >
+               <div class="flex flex-wrap">
+                   <a href="#" class="w-[22px] block mr-[20px]"
+                       ><svg
+                           fill="#FFFFFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 30 30"
+                       >
+                           <path
+                               d="M15.6 30V19.4h5V15h-5v-3.1c0-1 .6-1.9 1.3-1.9h3.8V5.6h-3.8c-3.1 0-5.6 2.8-5.6 6.3V15H7.5v4.4h3.8v10.1C4.8 27.9 0 22 0 15 0 6.7 6.7 0 15 0s15 6.7 15 15c0 8.1-6.4 14.7-14.4 15z"
+                           ></path></svg>
+                   </a>
+                   <a href="#" class="w-[22px] block mr-[20px]"
+                       ><svg
+                           fill="#FFFFFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 30 30"
+                       >
+                           <path
+                               d="M30 15c0 8.3-6.7 15-15 15S0 23.3 0 15 6.7 0 15 0s15 6.7 15 15zm-3.7-5.5c-.8.3-1.6.6-2.5.7.9-.5 1.5-1.4 1.8-2.4-.8.5-1.7.8-2.7 1-.8-.8-1.9-1.4-3.1-1.4-2.4 0-4.2 1.9-4.2 4.3 0 .3 0 .7.1 1-3.5-.2-6.7-1.9-8.8-4.5-.3.7-.6 1.4-.6 2.2 0 1.5.7 2.8 1.9 3.5-.7 0-1.4-.2-1.9-.5 0 2.1 1.5 3.8 3.4 4.2-.3.1-.7.1-1.1.1-.3 0-.6 0-.8-.1.5 1.7 2.1 2.8 4 2.9-1.5 1.1-3.3 1.9-5.3 1.9-.3 0-.7 0-1-.1 1.9 1.2 4.1 1.9 6.5 1.9 7.8 0 12.1-6.5 12.1-12.1v-.6c.9-.4 1.6-1.2 2.2-2z"
+                           ></path></svg></a>
+                   <a href="#" class="w-[22px] block mr-[20px]"
+                       ><svg
+                           fill="#FFFFFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 30 30"
+                       >
+                           <path
+                               d="M30 15c0 8.3-6.7 15-15 15S0 23.3 0 15 6.7 0 15 0s15 6.7 15 15zm-5.6 0c0-6.9 0-6.9-9.4-6.9s-9.4 0-9.4 6.9 0 6.9 9.4 6.9 9.4 0 9.4-6.9zm-11.9-3.7l6.3 3.8-6.3 3.8v-7.6z"
+                           ></path></svg>
+                   </a>
+                   <a href="#" class="w-[22px] block mr-[20px]"
+                       ><svg
+                           fill="#FFFFFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 18 18"
+                       >
+                           <defs></defs>
+                           <path
+                               fill-rule="evenodd"
+                               d="M9 0c5 0 9 4 9 9s-4 9-9 9-9-4-9-9 4-9 9-9zM6.7 3.5h4.7c1.8 0 3.2 1.4 3.2 3.1v4.7c0 1.7-1.4 3.1-3.2 3.1H6.7c-1.8 0-3.2-1.4-3.2-3.1V6.7c0-1.8 1.4-3.2 3.2-3.2zM9 6.2c1.6 0 2.9 1.3 2.9 2.9S10.6 12 9 12s-3-1.3-3-2.9 1.3-2.9 3-2.9zm0 1.2c.9 0 1.7.8 1.7 1.7 0 .9-.8 1.7-1.7 1.7-.9 0-1.7-.8-1.7-1.7 0-.9.7-1.7 1.7-1.7zm2.8-1.7c.3 0 .6.2.6.6 0 .3-.2.6-.6.6-.3 0-.6-.2-.6-.6 0-.4.3-.6.6-.6zm-4.6-1h3.7c1.4 0 2.5 1.1 2.5 2.5v3.7c0 1.4-1.1 2.5-2.5 2.5H7.2c-1.4 0-2.5-1.1-2.5-2.5V7.2c-.1-1.4 1.1-2.5 2.5-2.5z"
+                               clip-rule="evenodd"
+                           ></path></svg>
+                   </a>
+                   <a href="#" class="w-[22px] block mr-[20px]"
+                       ><svg
+                           fill="#FFFFFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 30 30"
+                       >
+                           <path
+                               d="M30 15c0 8.3-6.7 15-15 15S0 23.3 0 15 6.7 0 15 0s15 6.7 15 15zM11.3 7.8c0-1.2-1-2.2-2.5-2.2s-2.5.9-2.5 2.2c0 1.2 1 2.2 2.5 2.2s2.5-1 2.5-2.2zm-.7 4.1H6.9v10.6h3.8V11.9zm13.8 5c0-3.4-1.7-5.6-4.4-5.6-1.5 0-2.6.9-3.1 2.3l-.1-1.6H13c0 .4.1 2.5.1 2.5v8.1h3.8V17c0-1.5.7-2.5 1.8-2.5s1.9.6 1.9 2.5v5.6h3.8v-5.7z"
+                           ></path></svg>
+                   </a>
+                   <a href="#" class="w-[22px] block mr-[20px]"
+                       ><svg
+                           fill="#FFFFFF"
+                           xmlns="http://www.w3.org/2000/svg"
+                           viewBox="0 0 30 30"
+                       >
+                           <path
+                               d="M15 30c-1.5 0-2.9-.2-4.3-.6.6-.9 1.2-2 1.5-3.2.2-.7 1-4.1 1-4.1.5 1 2 1.9 3.7 1.9 4.8 0 8.1-4.4 8.1-10.3 0-4.4-3.8-8.6-9.5-8.6-7.1-.1-10.6 5-10.6 9.3 0 2.6 1 4.9 3.1 5.7.3.1.7 0 .8-.4.1-.2.2-.9.3-1.2.1-.4 0-.5-.2-.8-.6-.7-1-1.6-1-3 0-3.8 2.8-7.2 7.4-7.2 4 0 6.2 2.5 6.2 5.8 0 4.3-1.9 8-4.8 8-1.6 0-2.7-1.3-2.4-2.9.5-1.9 1.3-4 1.3-5.3 0-1.2-.7-2.3-2-2.3-1.6 0-2.9 1.7-2.9 3.9 0 1.4.5 2.4.5 2.4S9.5 24 9.3 25.3c-.3 1.1-.4 2.4-.3 3.5-5.3-2.4-9-7.7-9-13.8C0 6.7 6.7 0 15 0s15 6.7 15 15-6.7 15-15 15z"
+                           ></path></svg>
+                   </a>
+               </div>
+               <div class="flex justify-end items-center">
+                   <a
+                       class="inline-block mr-[20px] text-[#B6BABF]"
+                       href="#"
+                       >Terms of Service</a
+                   >
+                   <a
+                       class="inline-block mr-[20px] text-[#B6BABF]"
+                       href="#"
+                       >Privacy Policy</a
+                   >
+                   <span class="text-[#B6BABF]">
+                       <span class="inline-block w-[16px]"
+                           ><svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               viewBox="0 0 45 45"
+                           >
+                               <path
+                                   fill="#FFFFFF"
+                                   d="M22.5 2A20.5 20.5 0 1043 22.5 20.52 20.52 0 0022.5 2zm-4.23 28.79A33.67 33.67 0 0022 31a34.54 34.54 0 004.76-.33 30.45 30.45 0 01-4.26 9 30.41 30.41 0 01-4.23-8.88zM22 28a29.86 29.86 0 01-4.47-.34A31 31 0 0117 22a29.87 29.87 0 01.36-4.64A30.13 30.13 0 0122 17a31 31 0 015.66.53A29.85 29.85 0 0128 22a31 31 0 01-.5 5.5 31 31 0 01-5.5.5zm-7.64-1a25.22 25.22 0 01-9.15-4.5 24.89 24.89 0 019-4.48A33.56 33.56 0 0014 22a34.61 34.61 0 00.36 5zM22.5 5.21a25.25 25.25 0 014.5 9.15 34.61 34.61 0 00-5-.36 33.58 33.58 0 00-4 .24 25.24 25.24 0 014.5-9.03zm8.29 13.06a30.41 30.41 0 018.89 4.23 30.46 30.46 0 01-9 4.26A34.54 34.54 0 0031 22a33.67 33.67 0 00-.21-3.73zm8.82.59A33.75 33.75 0 0030.26 15a29.2 29.2 0 00-3.89-9.56 17.54 17.54 0 0113.24 13.42zm-21-13.41a29.16 29.16 0 00-3.85 9.35 29.16 29.16 0 00-9.35 3.85A17.54 17.54 0 0118.64 5.44zM5.44 26.36a29.2 29.2 0 009.56 3.9 33.75 33.75 0 003.86 9.36A17.54 17.54 0 015.44 26.36zm20.7 13.25a33.73 33.73 0 003.91-9.56 33.73 33.73 0 009.56-3.91 17.55 17.55 0 01-13.47 13.47z"
+                               ></path></svg>
+                       </span>
+                       <span>India</span>
+                       <span class="inline-block w-[16px]"
+                           ><svg
+                               xmlns="http://www.w3.org/2000/svg"
+                               viewBox="0 0 10 5"
+                           >
+                               <path
+                                   fill="#FFFFFF"
+                                   d="M0 0l5 5 5-5H0z"
+                               ></path></svg>
+                       </span>
+                   </span>
+               </div>           
+        </footer>
+        </div>
+    </body>
